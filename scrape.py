@@ -1,7 +1,16 @@
+
+
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
 def get_twitter_stats():
+    """
+    Gets Twitter follower and following data by initializing
+    WebDriver for Chrome, using its automated software,
+    going to Twitter URL, accessing classes which hold 
+    follower and following count, assigns values to variables, 
+    and prints the result in a formatted statement.
+    """
     twitter_url = "https://twitter.com/MiladFarazian"
     driver = webdriver.Chrome()
     driver.get(twitter_url)
@@ -15,6 +24,13 @@ def get_twitter_stats():
     print("Twitter Stats: {} following and {} followers".format(following, followers))
 
 def get_instagram_stats():
+    """
+    Gets Instagram follower and following data by initializing
+    WebDriver for Chrome, using its automated software,
+    going to Twitter URL, accessing classes which hold 
+    follower and following count, assigns values to variables, 
+    and prints the result in a formatted statement.
+    """
     instagram_url = "https://www.instagram.com/MiladFarazian/"
     driver = webdriver.Chrome()
     driver.get(instagram_url)
@@ -27,7 +43,14 @@ def get_instagram_stats():
     followers = stats[2].text.strip()
     print("Instagram Stats: {} following and {} followers".format(following, followers))
 
-""" def get_facebook_stats():
+def get_facebook_stats():
+    """
+    Gets Facebook follower and following data by initializing
+    WebDriver for Chrome, using its automated software,
+    going to Twitter URL, accessing classes which hold 
+    follower and following count, assigns values to variables, 
+    and prints the result in a formatted statement.
+    """
     facebook_url = "https://www.facebook.com/miladfarazian/"
     driver = webdriver.Chrome()
     driver.get(facebook_url)
@@ -35,10 +58,20 @@ def get_instagram_stats():
     facebook_soup = BeautifulSoup(content, "lxml")
     stats = facebook_soup.findAll("span", class_ ="oi732d6d ik7dh3pa d2edcug0 qv66sw1b c1et5uql a8c37x1j muag1w35 enqfppq2 jq4qci2q a3bd9o3v lrazzd5p m9osqain")
     for stat in stats:
-        print(stat.text.strip()) """
+        print(stat.text.strip())
 
 
 def get_social_media_stats():
+    """
+    Gets All Social Media stats by calling all functions
+    
+    Gets follower and following data by initializing
+    WebDriver for Chrome, using its automated software,
+    going to Twitter URL, accessing classes which hold 
+    follower and following count, assigns values to 
+    variables, and prints the result in a formatted 
+    statement.
+    """
     pass
 
 #get_twitter_stats()
